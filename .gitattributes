@@ -1,0 +1,9 @@
+# Store every text file with LF line endings, even when edited on Windows.
+# Our scripts and YAML run on Linux servers, where CRLF breaks them.
+* text=auto eol=lf
+
+# Never touch binary files.
+*.png binary
+*.jpg binary
+*.gz  binary
+*.zip binary

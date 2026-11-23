@@ -1,0 +1,38 @@
+# ---------- Secrets: must NEVER be committed ----------
+.env
+*.env.local
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+.vault_pass
+.vault_pass.txt
+secrets/
+
+# ---------- Terraform ----------
+# Downloaded providers and modules (big, rebuilt with `terraform init`)
+.terraform/
+# State files contain real secrets in plain text
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+# Variable files often hold secrets; only example files are committed
+*.tfvars
+*.tfvars.json
+!*.example.tfvars
+# Local overrides
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# ---------- Ansible ----------
+*.retry
+
+# ---------- Editors / OS ----------
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
